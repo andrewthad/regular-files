@@ -1,0 +1,34 @@
+cabal-version: 2.2
+name: regular-files
+version: 0.1.0.0
+synopsis: Unix regular files
+description:
+  This is alternative to `System.IO` from `base`. The `System.IO.Handle` has
+  many concerns:
+  .
+  * Dealing with file descriptors corresponding to many types of resources
+    including regular files, sockets, and pipes. The requires integrating
+    with the GHC event manager.
+  .
+  * Working with file descriptors that were created in places other
+    than `openFile`.
+  .
+  * Assigning a textual encoding to a `Handle`.
+  .
+  This library, by constrast, only concerns itself with handling regular
+  files.
+homepage: https://github.com/andrewthad/regular-files
+bug-reports: https://github.com/andrewthad/regular-files/issues
+license: BSD-3-Clause
+license-file: LICENSE
+author: Andrew Martin
+maintainer: andrew.thaddeus@gmail.com
+copyright: 2019 Andrew Martin
+category: System
+extra-source-files: CHANGELOG.md
+
+library
+  exposed-modules: File
+  build-depends: base >=4.12
+  hs-source-dirs: src
+  default-language: Haskell2010
